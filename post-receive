@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+if (!$file = fopen('php://stdin','r')) {
+	echo("php://stdin in unreadable"); exit(1);
+}
+
+$line    = fgets($file); fclose($file);
+$items   = explode(" ", $line);
+$oldref  = $items[0];
+$newref  = $items[1];
+$refname = $items[2];
+$repodir = dirname(dirname(__FILE__));
+
+echo $repodir."\n";
+
+
